@@ -11,11 +11,14 @@
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
   [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
   
-  [Live Demo](https://flightscope.vercel.app) · [Report Bug](https://github.com/yourusername/flightscope/issues) · [Request Feature](https://github.com/yourusername/flightscope/issues)
+  [Live Demo](https://flightscope.vercel.app) · [Report Bug](https://github.com/Sanket-Bharadwaj/flightscope/issues) · [Request Feature](https://github.com/Sanket-Bharadwaj/flightscope/issues)
 
    
 
 </div>
+
+<img width="1926" height="1079" alt="Screenshot 2025-10-24 at 8 17 15 PM" src="https://github.com/user-attachments/assets/f0474bf6-58c8-4654-9c42-fabe7a6b1cdc" />
+
 
 ---
 
@@ -61,6 +64,9 @@
 - 🌐 **No API Keys Required** - Uses public OpenSky Network data
 - 📱 **Mobile Responsive** - Touch-optimized controls and gestures
 - ♿ **Accessible** - Keyboard navigation and screen reader support
+
+<img width="7100" height="4808" alt="diagram" src="https://github.com/user-attachments/assets/a983f7cb-05f3-4923-8314-e071c2a12eb7" />
+
 
 ---
 
