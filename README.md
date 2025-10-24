@@ -12,9 +12,9 @@
   [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
   
   [Live Demo](https://flightscope.vercel.app) · [Report Bug](https://github.com/yourusername/flightscope/issues) · [Request Feature](https://github.com/yourusername/flightscope/issues)
-  
-  ![FlightScope Preview](https://via.placeholder.com/800x400/1a1a1a/facc15?text=FlightScope+Preview)
-  
+
+   
+
 </div>
 
 ---
