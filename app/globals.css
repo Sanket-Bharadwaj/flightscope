@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'leaflet/dist/leaflet.css';
+@import 'leaflet.markercluster/dist/MarkerCluster.css';
+@import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+
+@layer base {
+  :root {
+    --header-height: 64px;
+    --controlcard-height: 120px;
+    --background: 0 0% 100%; /* Light theme background */
+    --foreground: 0 0% 3.9%; /* Light theme foreground */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 260 70% 75%; /* #9E7FFF */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 200 80% 60%; /* #38bdf8 */
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 330 80% 75%; /* #f472b6 */
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%; /* Default destructive */
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --surface: 0 0% 100%; /* Light theme surface */
+    --text: 0 0% 3.9%; /* Light theme text */
+    --textSecondary: 0 0% 45.1%; /* Light theme text secondary */
+    --success: 150 60% 40%; /* #10b981 */
+    --warning: 40 90% 50%; /* #f59e0b */
+    --error: 0 80% 60%; /* #ef4444 */
+    --radius: 0.75rem; /* Base radius for rounded elements */
+  }
+
+  .dark {
+    --background: 240 10% 3.9%; /* Dark theme background */
+    --foreground: 0 0% 98%; /* Dark theme foreground */
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 260 70% 75%; /* #9E7FFF */
+    --primary-foreground: 0 0% 9%;
+    --secondary: 200 80% 60%; /* #38bdf8 */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 14.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 330 80% 75%; /* #f472b6 */
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%; /* Default destructive */
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --surface: 240 5% 10%; /* Dark theme surface */
+    --text: 0 0% 98%; /* Dark theme text */
+    --textSecondary: 240 5% 64.9%; /* Dark theme text secondary */
+    --success: 150 60% 40%; /* #10b981 */
+    --warning: 40 90% 50%; /* #f59e0b */
+    --error: 0 80% 60%; /* #ef4444 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Custom styles for Leaflet popups and tooltips */
+.leaflet-popup-content-wrapper,
+.leaflet-tooltip-pane .leaflet-tooltip {
+  @apply rounded-xl shadow-lg border-none bg-surface/70 backdrop-blur-xl;
+}
+
+.leaflet-popup-content {
+  @apply p-0; /* Remove default padding */
+}
+
+.leaflet-popup-tip {
+  @apply bg-surface/70;
+}
+
+/* Fade animations for Leaflet popup */
+.leaflet-popup {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+.leaflet-popup.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.leaflet-popup.fade-out {
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+}
+
+/* Hide Leaflet attribution and zoom controls */
+.leaflet-control-attribution,
+.leaflet-control-zoom {
+  display: none !important;
+}
+
+/* Custom marker cluster styling */
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background-color: hsla(var(--primary), 0.6) !important;
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  font-weight: bold;
+}
+
+/* Plane marker styling */
+.plane-marker {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.plane-marker:hover {
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+  transform: scale(1.1);
+}
+
+/* User location pulse animation */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.user-location-pulse {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .leaflet-popup-content-wrapper {
+    max-width: 90vw !important;
+  }
+}
